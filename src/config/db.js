@@ -6,7 +6,7 @@ const connectDB = async () => {
     const mongoUri =
       process.env.MONGODB_URI ||
       process.env.DATABASE_URL ||
-      'mongodb://127.0.0.1:27017/ca1';
+      'mongodb://localhost:27017/global';
 
     const connection = await mongoose.connect(mongoUri);
     console.log(`MongoDB Connected: ${connection.connection.host}`);

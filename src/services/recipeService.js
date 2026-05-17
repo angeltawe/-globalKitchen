@@ -35,9 +35,10 @@ const updateRecipe = async (id, updateData) => {
     id,
     { $set: updateData },
     {
-      new: true,          
-      runValidators: true, 
-});
+      new: true,
+      runValidators: true,
+    }
+  );
 
   return updatedRecipe; 
 };
