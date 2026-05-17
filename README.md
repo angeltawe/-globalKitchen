@@ -1,12 +1,12 @@
-# 🍽️ The Global Kitchen API
+# The Global Kitchen API
 
 A RESTful backend API for managing a digital cookbook, built with Node.js, Express, and MongoDB.
 
 ## Tech Stack
 
-- **Runtime:** Node.js (v18+)
-- **Framework:** Express.js v4
-- **Database:** MongoDB (via Mongoose ODM)
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB
 - **Configuration:** dotenv
 
 ## Architecture
@@ -33,15 +33,15 @@ src/
 
 ## Features
 
-- ✅ Full CRUD for recipes (GET, POST, PATCH, DELETE)
-- ✅ Category-based filtering via query params
-- ✅ Schema validation (required, min, enum, trim)
-- ✅ BSON-optimized data types (Number for cookingTime, Date timestamps)
-- ✅ MongoDB indexes on `category` and `title`
-- ✅ Global error handler (404, ValidationError, CastError, DuplicateKey)
-- ✅ Async/await throughout — non-blocking I/O
-- ✅ Environment variables via `.env`
-- ✅ `.gitignore` excludes `node_modules` and `.env`
+- Full CRUD for recipes (GET, POST, PATCH, DELETE)
+- Category-based filtering via query params
+- Schema validation (required, min, enum, trim)
+- BSON-optimized data types (Number for cookingTime, Date timestamps)
+- MongoDB indexes on `category` and `title`
+- Global error handler (404, ValidationError, CastError, DuplicateKey)
+- Async/await throughout — non-blocking I/O
+- Environment variables via `.env`
+- `.gitignore` excludes `node_modules` and `.env`
 
 ## Installation & Setup
 
