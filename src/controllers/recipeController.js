@@ -1,9 +1,5 @@
 import recipeService from '../services/recipeService.js';
 
-/**
- * GET /recipes
- * Retrieve all recipes. Supports ?category= query param for filtering.
- */
 const getAllRecipes = async (req, res, next) => {
   try {
     const { category } = req.query;
@@ -15,14 +11,10 @@ const getAllRecipes = async (req, res, next) => {
       data: { recipes },
     });
   } catch (error) {
-    next(error); // Pass to global error handler
+    next(error);
   }
 };
 
-/**
- * GET /recipes/:id
- * Retrieve a single recipe by ID.
- */
 const getRecipeById = async (req, res, next) => {
   try {
     const recipe = await recipeService.getRecipeById(req.params.id);
@@ -42,10 +34,6 @@ const getRecipeById = async (req, res, next) => {
   }
 };
 
-/**
- * POST /recipes
- * Create a new recipe.
- */
 const createRecipe = async (req, res, next) => {
   try {
     const newRecipe = await recipeService.createRecipe(req.body);
@@ -59,10 +47,6 @@ const createRecipe = async (req, res, next) => {
   }
 };
 
-/**
- * PATCH /recipes/:id
- * Partially update a recipe (e.g., just cookingTime).
- */
 const updateRecipe = async (req, res, next) => {
   try {
     const updatedRecipe = await recipeService.updateRecipe(req.params.id, req.body);
@@ -82,10 +66,6 @@ const updateRecipe = async (req, res, next) => {
   }
 };
 
-/**
- * DELETE /recipes/:id
- * Remove a recipe from the collection.
- */
 const deleteRecipe = async (req, res, next) => {
   try {
     const deletedRecipe = await recipeService.deleteRecipe(req.params.id);
@@ -96,7 +76,6 @@ const deleteRecipe = async (req, res, next) => {
       return next(error);
     }
 
-    // 204 No Content — success with no body
     res.status(204).send();
   } catch (error) {
     next(error);
